@@ -1,0 +1,28 @@
+[project]
+name = "timeseries"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Louis903995", email = "louis@moises.fr"},
+]
+dependencies = ["fastapi>=0.116.1", "uvicorn>=0.35.0"]
+requires-python = ">=3.12"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
+
+dev = [
+    "pytest>=8.4.1",
+]
+[tool.pytest.ini_options]
+filterwarnings = [
+    "ignore:Unrecognized server version info.*:sqlalchemy.exc.SAWarning"
+]
